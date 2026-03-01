@@ -9,6 +9,7 @@ const NAV_LINKS = [
   { href: '#fonctionnalites', label: 'Fonctionnalités' },
   { href: '#gamification', label: 'Gamification' },
   { href: '#plateformes', label: 'Plateformes' },
+  { href: '#tarifs', label: 'Tarifs' },
   { href: '#temoignages', label: 'Témoignages' },
 ];
 

@@ -1,4 +1,4 @@
-import type { Level, Badge, BadgeCategoryInfo, Platform, Feature, Testimonial, Stat } from './types';
+import type { Level, Badge, BadgeCategoryInfo, Platform, Feature, Testimonial, Stat, PricingPlan } from './types';
 
 // ── Levels (source: GamificationService.php) ──────────────────────────────────
 
@@ -148,3 +148,88 @@ export const BADGE_COLOR_MAP: Record<string, { bg: string; text: string; border:
   orange: { bg: 'bg-orange-50 dark:bg-orange-950',  text: 'text-orange-600 dark:text-orange-400', border: 'border-orange-200 dark:border-orange-800', glow: 'shadow-orange-500/25' },
   cyan:   { bg: 'bg-cyan-50 dark:bg-cyan-950',      text: 'text-cyan-600 dark:text-cyan-400',     border: 'border-cyan-200 dark:border-cyan-800',     glow: 'shadow-cyan-500/25' },
 };
+
+// ── Pricing Plans (Gami-SaaS) ────────────────────────────────────────────────
+
+export const ANNUAL_DISCOUNT = 0.2;
+
+export const PRICING_PLANS: PricingPlan[] = [
+  {
+    id: 'novice',
+    name: 'Pack Novice',
+    tagline: 'Pour les structures débutantes',
+    monthlyPrice: 0,
+    annualPrice: 0,
+    priceLabel: 'Gratuit',
+    unit: '',
+    popular: false,
+    features: [
+      { label: 'CRM de base', included: true },
+      { label: 'Gestion documentaire standard', included: true },
+      { label: 'Limite à 50 étudiants', included: true },
+      { label: 'Support communautaire', included: true },
+      { label: 'Moteur Pulse', included: false },
+      { label: 'Badges & gamification', included: false },
+      { label: 'Dashboard alternance', included: false },
+    ],
+    cta: 'Démarrer gratuitement',
+    glow: {
+      idle: '0 0 0 1px rgba(180, 120, 80, 0.15)',
+      hover: '0 0 40px 8px rgba(180, 120, 80, 0.25), 0 0 80px 16px rgba(180, 120, 80, 0.1)',
+      border: 'rgba(180, 120, 80, 0.4)',
+      badge: 'bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-300',
+    },
+  },
+  {
+    id: 'specialiste',
+    name: 'Pack Spécialiste',
+    tagline: "Le c\u0153ur de l'offre",
+    monthlyPrice: 4,
+    annualPrice: null,
+    priceLabel: null,
+    unit: '/étudiant/mois',
+    popular: true,
+    features: [
+      { label: 'Moteur Pulse complet', included: true },
+      { label: '16 badges Harry Potter standards', included: true },
+      { label: 'Dashboard de suivi d\'alternance', included: true },
+      { label: 'Support 24/7', included: true },
+      { label: 'CRM complet & illimité', included: true },
+      { label: 'Agrégation 17 plateformes', included: true },
+      { label: 'Coaching intégré', included: true },
+    ],
+    cta: 'Essai gratuit 14 jours',
+    glow: {
+      idle: '0 0 0 1px rgba(168, 162, 186, 0.2)',
+      hover: '0 0 40px 8px rgba(168, 162, 186, 0.3), 0 0 80px 16px rgba(192, 192, 220, 0.15)',
+      border: 'rgba(168, 162, 186, 0.5)',
+      badge: 'bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-200',
+    },
+  },
+  {
+    id: 'legende',
+    name: 'Pack Légende',
+    tagline: 'Pour les réseaux d\'écoles',
+    monthlyPrice: null,
+    annualPrice: null,
+    priceLabel: 'Sur Devis',
+    unit: '',
+    popular: false,
+    features: [
+      { label: 'Marque blanche totale', included: true },
+      { label: 'Design de badges 8K sur-mesure', included: true },
+      { label: 'API d\'intégration LMS', included: true },
+      { label: 'Marketplace de badges premium', included: true },
+      { label: 'Tout le Pack Spécialiste', included: true },
+      { label: 'Account manager dédié', included: true },
+      { label: 'SLA 99.9% garanti', included: true },
+    ],
+    cta: 'Contacter l\'équipe',
+    glow: {
+      idle: '0 0 0 1px rgba(212, 175, 55, 0.15)',
+      hover: '0 0 40px 8px rgba(212, 175, 55, 0.3), 0 0 80px 16px rgba(212, 175, 55, 0.12), 0 0 120px 24px rgba(168, 85, 247, 0.08)',
+      border: 'rgba(212, 175, 55, 0.5)',
+      badge: 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900/40 dark:text-yellow-300',
+    },
+  },
+];

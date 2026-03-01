@@ -55,3 +55,35 @@ export interface Stat {
   suffix?: string;
   label: string;
 }
+
+// ── Pricing ──────────────────────────────────────────────────────────────────
+
+export type PricingTier = 'novice' | 'specialiste' | 'legende';
+
+export type PricingBilling = 'monthly' | 'annual';
+
+export interface PricingFeature {
+  label: string;
+  included: boolean;
+}
+
+export interface PricingGlow {
+  idle: string;
+  hover: string;
+  border: string;
+  badge: string;
+}
+
+export interface PricingPlan {
+  id: PricingTier;
+  name: string;
+  tagline: string;
+  monthlyPrice: number | null;
+  annualPrice: number | null;
+  priceLabel: string | null;
+  unit: string;
+  popular: boolean;
+  features: PricingFeature[];
+  cta: string;
+  glow: PricingGlow;
+}

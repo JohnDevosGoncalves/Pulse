@@ -6,6 +6,7 @@ import { Features } from '@/components/sections/features';
 import { Gamification } from '@/components/sections/gamification';
 import { Platforms } from '@/components/sections/platforms';
 import { DashboardMockup } from '@/components/sections/dashboard-mockup';
+import { Pricing } from '@/components/sections/pricing';
 import { Coaching } from '@/components/sections/coaching';
 import { Testimonials } from '@/components/sections/testimonials';
 import { Cta } from '@/components/sections/cta';
@@ -21,6 +22,7 @@ export default function Home() {
         <Gamification />
         <Platforms />
         <DashboardMockup />
+        <Pricing />
         <Coaching />
         <Testimonials />
         <Cta />
