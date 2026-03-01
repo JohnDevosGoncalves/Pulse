@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* ── Dark mode: class-based strategy ─────────────────────────────── */
+@custom-variant dark (&:where(.dark, .dark *));
+
 /* ── Custom animations ─────────────────────────────────────────── */
 
 @keyframes scroll-left {
