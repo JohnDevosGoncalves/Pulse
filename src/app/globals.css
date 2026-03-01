@@ -1,0 +1,125 @@
+@import "tailwindcss";
+
+/* ── Custom animations ─────────────────────────────────────────── */
+
+@keyframes scroll-left {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes scroll-right {
+  0%   { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-10px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.4); }
+  50%      { box-shadow: 0 0 20px 4px rgba(99, 102, 241, 0.2); }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* ── Reduced motion ────────────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ── Base styles ───────────────────────────────────────────────── */
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  @apply bg-white text-gray-900 antialiased;
+  font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+}
+
+.dark body {
+  @apply bg-gray-950 text-gray-100;
+}
+
+/* ── Skip to content (a11y) ────────────────────────────────────── */
+
+.skip-to-content {
+  @apply absolute -top-10 left-4 z-[100] rounded-md bg-indigo-600 px-4 py-2 text-sm font-medium text-white;
+  transition: top 0.2s;
+}
+
+.skip-to-content:focus {
+  @apply top-4;
+}
+
+/* ── Scrollbar styling (subtle) ────────────────────────────────── */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply rounded-full bg-gray-300;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  @apply bg-gray-700;
+}
+
+/* ── Platform carousel ─────────────────────────────────────────── */
+
+.carousel-track {
+  animation: scroll-left 30s linear infinite;
+}
+
+.carousel-track-reverse {
+  animation: scroll-right 30s linear infinite;
+}
+
+.carousel-track:hover,
+.carousel-track-reverse:hover {
+  animation-play-state: paused;
+}
+
+/* ── Glass morphism ────────────────────────────────────────────── */
+
+.glass {
+  @apply bg-white/80 backdrop-blur-lg border-b border-gray-200/50;
+}
+
+.dark .glass {
+  @apply bg-gray-950/80 border-gray-800/50;
+}
+
+/* ── Gradient backgrounds ──────────────────────────────────────── */
+
+.hero-gradient {
+  background: radial-gradient(ellipse 80% 60% at 50% -20%, rgba(99, 102, 241, 0.15) 0%, transparent 70%);
+}
+
+.dark .hero-gradient {
+  background: radial-gradient(ellipse 80% 60% at 50% -20%, rgba(99, 102, 241, 0.1) 0%, transparent 70%);
+}
+
+.cta-gradient {
+  @apply bg-gradient-to-br from-indigo-600 to-purple-700;
+}
