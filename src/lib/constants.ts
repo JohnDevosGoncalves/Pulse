@@ -191,9 +191,9 @@ export const PRICING_PLANS: PricingPlan[] = [
     popular: true,
     features: [
       { label: 'Moteur Pulse complet', included: true },
-      { label: '16 badges Harry Potter standards', included: true },
+      { label: '16 badges thématiques standards', included: true },
       { label: 'Dashboard de suivi d\'alternance', included: true },
-      { label: 'Support 24/7', included: true },
+      { label: 'Support prioritaire', included: true },
       { label: 'CRM complet & illimité', included: true },
       { label: 'Agrégation 17 plateformes', included: true },
       { label: 'Coaching intégré', included: true },

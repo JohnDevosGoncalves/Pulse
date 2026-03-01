@@ -5,7 +5,7 @@ const FOOTER_LINKS = {
     { label: 'Fonctionnalités', href: '#fonctionnalites' },
     { label: 'Gamification', href: '#gamification' },
     { label: 'Plateformes', href: '#plateformes' },
-    { label: 'Tarifs', href: '#contact' },
+    { label: 'Tarifs', href: '#tarifs' },
   ],
   Ressources: [
     { label: 'Documentation', href: '#' },
